@@ -2,6 +2,15 @@
 
 Un guide interactif de gestion de projet et de préparation à la certification PMP : 12 chapitres, un calculateur de valeur acquise (EVM), un glossaire et une liste de lecture. Disponible en français, en anglais et en arabe (lecture de droite à gauche).
 
+## Pages
+
+| Adresse | Contenu |
+|---|---|
+| `/` | Accueil. Une scène Three.js suit le défilement : 2 400 points passent du désordre au triangle des contraintes, puis à un planning de Gantt, puis aux courbes de valeur acquise. |
+| `/guide` | Sommaire : une ligne par chapitre, avec l'état de lecture. |
+| `/guide/ch1` … `/guide/ch12` | Lecture d'un chapitre, avec son plan à gauche et les chapitres voisins en bas. |
+| `/calculateur`, `/annexes`, `/bibliotheque` | Les trois outils. |
+
 ## Ce que fait l'application
 
 | Partie | Détail |
@@ -14,22 +23,25 @@ Un guide interactif de gestion de projet et de préparation à la certification 
 
 ## Technique
 
-- **Interface** : React 19, Vite 5, Zustand, Tailwind CSS, Framer Motion, Lucide.
+- **Interface** : React 19, Vite 5, React Router, Zustand, Framer Motion, Three.js (React Three Fiber), Lucide.
 - **Serveur** : Python, FastAPI, SQLite. Un seul fichier, `api/main.py`.
 - **Tests** : 9 tests d'API (pytest) et 5 tests du calcul EVM (`node --test`).
 
 ### Animation
 
-Les réglages communs (durées, courbes, ressorts, variantes) sont dans `src/lib/motion.js`.
+Les réglages communs (durées, courbes, ressorts, variantes) sont dans `src/lib/motion.js`. Seuls `transform` et `opacity` sont animés.
 
-- `MotionConfig reducedMotion="user"` coupe les déplacements quand le système demande moins d'animations. Les animations CSS du héro s'arrêtent aussi.
-- La barre de progression et le bouton « haut de page » suivent le défilement avec `useScroll`, sans rendu React à chaque image.
-- L'entrée active du menu et la langue choisie glissent d'une position à l'autre (`layoutId`).
+- La scène de l'accueil (`src/components/landing/`) est pilotée par `useScroll` : la position dans le récit choisit la figure, et les points glissent de l'une à l'autre. Three.js est chargé à part, après le texte, et la scène se met en pause hors écran. Sans WebGL, un dessin statique la remplace.
+
+- `MotionConfig reducedMotion="user"` coupe les déplacements quand le système demande moins d'animations. La scène 3D passe alors d'une figure à l'autre sans mouvement continu.
+- Le fil de lecture d'un chapitre et le bouton « haut de page » suivent le défilement avec `useScroll`, sans rendu React à chaque image.
+- Le lien actif du menu, la section en cours de lecture et la langue choisie glissent d'une position à l'autre (`layoutId`).
+- Dans le sommaire, la barre de chaque chapitre se trace à l'ouverture ; sa longueur suit le nombre de sections.
 - Les nombres du calculateur s'animent vers leur nouvelle valeur ; les lecteurs d'écran lisent directement la valeur finale.
 
 ### Accessibilité
 
-Navigation complète au clavier, focus visible, lien d'évitement, fenêtres modales qui gardent le focus et se ferment avec Échap, libellés sur tous les champs, cibles tactiles d'au moins 36 px. Un statut n'est jamais indiqué par la couleur seule : il a aussi une icône et un texte.
+Navigation complète au clavier, focus visible, lien d'évitement, fenêtres modales qui gardent le focus et se ferment avec Échap, libellés sur tous les champs, cibles tactiles d'au moins 40 px. Un statut n'est jamais indiqué par la couleur seule : il a aussi une icône et un texte.
 
 ### Sécurité de l'administration
 
@@ -79,11 +91,20 @@ src/data/content.js         contenu par défaut du guide
 src/lib/motion.js           réglages d'animation partagés
 src/lib/evm.js              formules de valeur acquise
 src/stores/                 état (contenu, session, langue, progression, liste de lecture)
+src/pages/                  accueil, sommaire, lecture d'un chapitre
 src/components/             interface, un dossier par zone
-src/styles/v3.css           styles ajoutés en version 3
+src/components/landing/     scène Three.js et ses quatre figures
+src/styles/main.css         jetons de design et styles
 ```
 
+## Design
+
+Papier clair, une encre chaude et un seul accent orangé, réservé à ce qui compte dans un plan : le chemin critique, un écart, l'action principale. Titres en Instrument Serif, texte en Instrument Sans, chiffres en JetBrains Mono, arabe en IBM Plex Sans Arabic.
+
 ## Limites connues
+
+- Les polices viennent de Google Fonts : sans réseau, le navigateur utilise ses polices système.
+- Three.js pèse environ 240 Ko compressés. Il n'est chargé que sur l'accueil.
 
 - Les sections des chapitres ne sont rédigées qu'en français. En anglais et en arabe, seuls l'interface, les titres et les descriptions de chapitres sont traduits.
 - La limitation des tentatives de connexion est gardée en mémoire : elle repart de zéro au redémarrage du serveur.

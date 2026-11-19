@@ -101,7 +101,7 @@ export function EvmCalculator() {
           <div className="ch-card-header-bg" aria-hidden="true" />
           <div className="ch-card-header-circle" aria-hidden="true" />
           <div className="ch-num">{t('evmEyebrow')}</div>
-          <h2 className="ch-title" id="evm-title">{t('evmTitle')}</h2>
+          <h1 className="ch-title" id="evm-title">{t('evmTitle')}</h1>
           <p className="ch-desc">{t('evmDesc')}</p>
         </header>
 

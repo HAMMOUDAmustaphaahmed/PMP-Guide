@@ -729,15 +729,15 @@ export const getContent = (lang = 'fr') => {
   // ----- Construction des objets par langue -----
   const fr = {
     hero: {
-      eyebrow: 'crée par AMH',
-      title: 'Project Management',
-      subtitle: 'Guide Complet PMP',
-      description: 'Méthodologies, outils, KPI, leadership, agilité, risques et qualité — tout ce qu\'il faut pour maîtriser la gestion de projet moderne.',
+      eyebrow: 'Guide de gestion de projet',
+      title: 'Apprendre la gestion de projet',
+      subtitle: 'et préparer la certification PMP',
+      description: 'Douze chapitres, des fondamentaux au pilotage par les indicateurs. Chaque notion tient dans un tableau, une liste ou un schéma, pour réviser vite. Gratuit, sans inscription.',
       stats: [
         { value: '12', label: 'Chapitres' },
-        { value: '200+', label: 'KPI & Formules' },
-        { value: '6', label: 'Méthodes' },
-        { value: 'PMP', label: 'Certif. préparée' },
+        { value: '35', label: 'Sections' },
+        { value: '70', label: 'Ouvrages cités' },
+        { value: '3', label: 'Langues' },
       ],
       pills: ['PMBOK 7', 'PRINCE2', 'Scrum', 'Kanban', 'SAFe', 'Lean', 'Six Sigma', 'ADKAR'],
     },
@@ -747,15 +747,15 @@ export const getContent = (lang = 'fr') => {
 
   const en = {
     hero: {
-      eyebrow: 'Created by AMH',
-      title: 'Project Management',
-      subtitle: 'Complete PMP Guide',
-      description: 'Methodologies, tools, KPIs, leadership, agility, risks, and quality — everything you need to master modern project management.',
+      eyebrow: 'Project management guide',
+      title: 'Learn project management',
+      subtitle: 'and prepare for the PMP exam',
+      description: 'Twelve chapters, from the fundamentals to steering by indicators. Each idea fits in a table, a list or a diagram, so you can revise quickly. Free, no sign-up.',
       stats: [
         { value: '12', label: 'Chapters' },
-        { value: '200+', label: 'KPIs & Formulas' },
-        { value: '6', label: 'Methods' },
-        { value: 'PMP', label: 'Cert. Prep' },
+        { value: '35', label: 'Sections' },
+        { value: '70', label: 'Books cited' },
+        { value: '3', label: 'Languages' },
       ],
       pills: ['PMBOK 7', 'PRINCE2', 'Scrum', 'Kanban', 'SAFe', 'Lean', 'Six Sigma', 'ADKAR'],
     },
@@ -765,15 +765,15 @@ export const getContent = (lang = 'fr') => {
 
   const ar = {
     hero: {
-      eyebrow: ' AMH من إعداد ',
-      title: 'إدارة المشاريع',
-      subtitle: 'الدليل الشامل وشهادة PMP',
-      description: 'المنهجيات، الأدوات، مؤشرات الأداء، القيادة، الرشاقة، المخاطر، الجودة — كل ما تحتاجه لإتقان إدارة المشاريع الحديثة.',
+      eyebrow: 'دليل إدارة المشاريع',
+      title: 'تعلّم إدارة المشاريع',
+      subtitle: 'واستعدّ لشهادة PMP',
+      description: 'اثنا عشر فصلًا، من الأساسيات إلى القيادة بالمؤشرات. كل مفهوم في جدول أو قائمة أو مخطط لمراجعة سريعة. مجاني ودون تسجيل.',
       stats: [
         { value: '١٢', label: 'فصول' },
-        { value: '٢٠٠+', label: 'مؤشرات و معادلات' },
-        { value: '٦', label: 'منهجيات' },
-        { value: 'PMP', label: 'تحضير الشهادة' },
+        { value: '٣٥', label: 'قسمًا' },
+        { value: '٧٠', label: 'كتابًا مرجعيًا' },
+        { value: '٣', label: 'لغات' },
       ],
       pills: ['PMBOK 7', 'PRINCE2', 'Scrum', 'Kanban', 'SAFe', 'Lean', 'Six Sigma', 'ADKAR'],
     },

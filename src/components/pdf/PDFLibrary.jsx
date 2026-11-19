@@ -52,7 +52,7 @@ export function PDFLibrary() {
           <div className="ch-card-header-bg" aria-hidden="true" />
           <div className="ch-card-header-circle" aria-hidden="true" />
           <div className="ch-num">{t('library')}</div>
-          <h2 className="ch-title" id="library-title">{t('libraryTitle')}</h2>
+          <h1 className="ch-title" id="library-title">{t('libraryTitle')}</h1>
           <p className="ch-desc">{t('libraryDesc')}</p>
         </header>
 

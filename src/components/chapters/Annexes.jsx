@@ -41,21 +41,21 @@ export function Annexes() {
         <header className="ch-card-header">
           <div className="ch-card-header-bg" aria-hidden="true" />
           <div className="ch-num">{t('annexes')}</div>
-          <h2 className="ch-title" id="annexes-title">{t('annexesTitle')}</h2>
+          <h1 className="ch-title" id="annexes-title">{t('annexesTitle')}</h1>
           <p className="ch-desc">{t('annexesDesc')}</p>
         </header>
         <div className="ch-card-body">
-          <h3 className="sh">{t('glossaryTitle')}</h3>
+          <h2 className="sh">{t('glossaryTitle')}</h2>
           <Table caption={t('glossaryTitle')} headers={[t('term'), t('definition')]} rows={annexes.glossary} />
 
-          <h3 className="sh">{t('formulasTitle')}</h3>
+          <h2 className="sh">{t('formulasTitle')}</h2>
           <Table
             caption={t('formulasTitle')}
             headers={[t('indicator'), t('formula'), t('goodPerf'), t('actionIfBad')]}
             rows={annexes.formulas}
           />
 
-          <h3 className="sh">{t('checklistTitle')}</h3>
+          <h2 className="sh">{t('checklistTitle')}</h2>
           <div className="info-box">
             <div className="info-box-header" style={{ background: '#0F172A' }}>{t('checklistHeader')}</div>
             <ul className="info-box-body" style={{ background: '#F1F5F9' }}>

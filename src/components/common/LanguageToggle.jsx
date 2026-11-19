@@ -10,8 +10,7 @@ const LANGUAGES = [
   { code: 'ar', short: 'ع', label: 'العربية' },
 ]
 
-// Trois langues tiennent sur une ligne : un sélecteur segmenté évite
-// le menu déroulant et son clic supplémentaire.
+// Trois langues tiennent sur une ligne : pas besoin de menu déroulant.
 export function LanguageToggle() {
   const language = useLanguageStore((s) => s.language)
   const setLanguage = useLanguageStore((s) => s.setLanguage)
