@@ -99,7 +99,7 @@ src/styles/main.css         jetons de design et styles
 
 ## Design
 
-Papier clair, une encre chaude et un seul accent orangé, réservé à ce qui compte dans un plan : le chemin critique, un écart, l'action principale. Titres en Instrument Serif, texte en Instrument Sans, chiffres en JetBrains Mono, arabe en IBM Plex Sans Arabic.
+Fond froid, encre marine et bleu cobalt pour les actions. Le rouge ne sert qu'au chemin critique et aux écarts, comme dans les outils de planification. Chaque chapitre porte en plus sa propre couleur. Titres en Bricolage Grotesque, texte en DM Sans, chiffres en JetBrains Mono, arabe en IBM Plex Sans Arabic.
 
 ## Limites connues
 

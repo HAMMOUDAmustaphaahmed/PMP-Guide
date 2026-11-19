@@ -4,9 +4,9 @@
 // seules leurs positions et leurs couleurs cibles changent.
 
 // Couleurs en espace linéaire : Three.js les reconvertit en sRGB à l'affichage
-// (#1c1917 pour l'encre, #c2410c pour l'accent).
-const INK = [0.0116, 0.0097, 0.0086]
-const ACCENT = [0.539, 0.053, 0.0037]
+// (#0b1b33 pour l'encre, #e5484d pour le rouge du chemin critique).
+const INK = [0.0033, 0.011, 0.033]
+const ACCENT = [0.783, 0.065, 0.074]
 
 // Générateur pseudo-aléatoire à graine : la scène est identique à chaque visite.
 function mulberry32(seed) {

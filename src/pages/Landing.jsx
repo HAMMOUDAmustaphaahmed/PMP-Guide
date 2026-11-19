@@ -51,7 +51,7 @@ export default function Landing() {
                   exit={{ opacity: 0 }}
                   transition={{ duration: DUR.fast }}
                 >
-                  <i className={stage >= 2 ? 'accent' : ''} />
+                  <i className={stage >= 1 ? 'accent' : ''} />
                   {t(`cap${stage}`)}
                 </motion.span>
               </AnimatePresence>
