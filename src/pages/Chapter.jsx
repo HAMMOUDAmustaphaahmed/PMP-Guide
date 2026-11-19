@@ -73,13 +73,12 @@ export default function Chapter() {
   const next = chapters[index + 1]
 
   return (
-    <article className="wrap page" aria-labelledby="chapter-title">
+    <article className="wrap page" aria-labelledby="chapter-title" style={{ '--c': chapter.accent }}>
       <header className="page-head">
         <nav className="crumbs" aria-label={t('backToc')}>
           <Link to="/guide">{t('guideTitle')}</Link>
-          <span aria-hidden="true">/</span>
-          <span className="num">{t('chapter')} {chapter.num}</span>
         </nav>
+        <p className="chapter-chip" style={{ marginBottom: 16 }}>{t('chapter')} {chapter.num}</p>
         <h1 id="chapter-title" className="page-title">{chapter.title}</h1>
         <p className="page-lede">{chapter.desc}</p>
         <div className="page-meta">

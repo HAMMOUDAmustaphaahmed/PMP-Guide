@@ -19,7 +19,7 @@ export function ChapterRows({ chapters, compact = false }) {
         const isDone = !!done[chapter.id]
         return (
           <li key={chapter.id}>
-            <Link className={`toc-row ${isDone ? 'done' : ''}`} to={`/guide/${chapter.id}`}>
+            <Link className={`toc-row ${isDone ? 'done' : ''}`} to={`/guide/${chapter.id}`} style={{ '--c': chapter.accent }}>
               <span className="toc-num">{chapter.num}</span>
               <span>
                 <span className="toc-title">{chapter.title}</span>

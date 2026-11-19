@@ -1,4 +1,5 @@
 import React from 'react'
+import { Linkedin } from 'lucide-react'
 import { useAuthStore } from '../../stores/authStore'
 import { useUiStore } from '../../stores/uiStore'
 import { useT } from '../../hooks/useT'
@@ -12,7 +13,18 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="wrap">
-        <p>{t('footer')}</p>
+        <p>
+          <a
+            className="footer-credit"
+            href="https://www.linkedin.com/in/ahmed-mustapha-hammouda-a55270195/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t('footer')}
+            <Linkedin size={15} aria-hidden="true" />
+            <span className="sr-only">LinkedIn</span>
+          </a>
+        </p>
         <p>
           {t('footerNote')}
           {/* Proposé seulement si un serveur d'administration répond. */}

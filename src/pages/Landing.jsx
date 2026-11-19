@@ -121,13 +121,13 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className="section tint">
+      <section className="section deep">
         <div className="wrap">
           <EvmTeaser />
         </div>
       </section>
 
-      <section className="section" aria-labelledby="closing-title">
+      <section className="section warm" aria-labelledby="closing-title">
         <div className="wrap closing">
           <h2 id="closing-title" className="section-title">{t('closingTitle')}</h2>
           <Link className="btn" to="/guide/ch1">
